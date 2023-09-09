@@ -1,4 +1,4 @@
 [wokwi]
 version=1
-firmware = 'E:/Git/Motors_simulation/Servo_Motors/.pio/build/esp32doit-devkit-v1/firmware.bin'
-elf= 'E:/Git/Motors_simulation/Servo_Motors/.pio/build/esp32doit-devkit-v1/firmware.elf'
+firmware = '.pio\build\esp32doit-devkit-v1\firmware.bin'
+elf= '.pio\build\esp32doit-devkit-v1\firmware.elf'
