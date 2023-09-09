@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "author": "Nicolas Bamamou",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 65.11, "left": 8.76, "attrs": {} },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": 101.24,
+      "left": 346.38,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": 294.48,
+      "left": 233.24,
+      "attrs": { "hornColor": "#00008", "horn": "cross" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo2",
+      "top": 279.04,
+      "left": -25.19,
+      "rotate": 180,
+      "attrs": { "hornColor": "#000088" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -46.23,
+      "left": 107.43,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -47.29,
+      "left": 180.16,
+      "attrs": { "color": "red", "label": "Wrong" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 20.59,
+      "left": 195.98,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "joystick1:VCC", "uno:5V", "red", [ "h-56.53", "v126.61", "h-117.82" ] ],
+    [ "joystick1:GND", "uno:GND.2", "black", [ "h-10.28", "v97.46", "h-156.76" ] ],
+    [ "joystick1:VERT", "uno:A0", "green", [ "h-21.48", "v119.45", "h-106.13" ] ],
+    [ "joystick1:HORZ", "uno:A1", "green", [ "h-46.31", "v104.49", "h-72.05" ] ],
+    [ "joystick1:SEL", "uno:2", "green", [ "h-35.17", "v-123.78", "h-60.76" ] ],
+    [ "servo1:V+", "uno:5V", "red", [ "h0" ] ],
+    [ "servo1:GND", "uno:GND.2", "black", [ "h0" ] ],
+    [ "servo1:PWM", "uno:6", "green", [ "h0" ] ],
+    [ "servo2:V+", "uno:5V", "red", [ "h0" ] ],
+    [ "servo2:GND", "uno:GND.2", "black", [ "h0" ] ],
+    [ "servo2:PWM", "uno:5", "green", [ "h0" ] ],
+    [ "uno:GND.1", "bz1:1", "black", [ "v-36.5", "h-1.78" ] ],
+    [ "bz1:2", "uno:12", "green", [ "v0" ] ],
+    [ "r1:2", "uno:4", "green", [ "h0" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "led1:C", "bz1:1", "white", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
