@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "author": "Nicolas Bamamou",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -66.76, "left": 4.36, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -45.43,
+      "left": 211.25,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 28.54,
+      "left": 195.5,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -90.05,
+      "left": 94.79,
+      "rotate": 270,
+      "attrs": { "horn": "cross", "hornColor": "#000088" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 95.26,
+      "left": 178.81,
+      "rotate": 90,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "servo1:GND", "esp:GND.1", "black", [ "v24.69", "h-61.13" ] ],
+    [ "servo1:V+", "esp:3V3", "red", [ "v0" ] ],
+    [ "servo1:PWM", "esp:D2", "green", [ "v0" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "white", [ "v0" ] ],
+    [ "bz1:2", "esp:3V3", "red", [ "v-0.86", "h-44.64", "v-44.16" ] ],
+    [ "bz1:1", "esp:D4", "green", [ "h-33.76", "v0.24" ] ],
+    [ "r1:2", "esp:D15", "green", [ "h1.11", "v6.72" ] ]
+  ],
+  "dependencies": {}
+}
